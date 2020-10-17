@@ -1,0 +1,37 @@
+.applicant {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  max-width: 250px;
+  border: 1px solid green;
+  background-color: rgb(5, 95, 91);
+}
+
+.applicant__input {
+  margin: 10px;
+  height: 35px;
+  padding-left: 10px;
+  border-radius: 3px;
+  box-sizing: border-box;
+  outline: none;
+  border: 0;
+  font-size: 16px inherit;
+}
+
+.applicant__button {
+  margin-top: 30px;
+  height: 35px;
+}
+
+.applicant__container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100px;  
+}
+
+.applicant__error {
+  text-align: center;
+  font-size: 12px;
+  color: rgb(63, 219, 180);
+  padding: 0 10px;
+}
