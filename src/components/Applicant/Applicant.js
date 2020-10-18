@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './Applicant.css'
 
-const Applicant = ({ onSubmitHandler, inputs }) => {
+const Applicant = ({ onSubmitHandler, inputs = [] }) => {
 
 
     const [formData, setFormData] = useState({})
@@ -10,18 +10,21 @@ const Applicant = ({ onSubmitHandler, inputs }) => {
     const onSubmit = (evt) => {
         evt.preventDefault()
         onSubmitHandler(formData)
-
     }
+
+    // рабочий вариант 1
     const isValidForm = () => {
+        const requiredInputSum = (inputs.reduce((result, input) => {
+            if (input.required) {
+                result++
+            }
+            return result
+        }, 0))
         if (
-            Object.keys(formData).length === 0 ||
-            Object.keys(formData).some(input => !formData[input] || formData[input] === '') ||
-            Object.keys(formErrors).some(input => formErrors[input] && formErrors[input] !== '')
+            Object.keys(formErrors).length < requiredInputSum ||
+            Object.keys(formErrors).some(error => formErrors[error] !== '')
         ) { return true }
     }
-
-    //console.log(isValid(formErrors))
-    //console.log(isValid(formErrors))    Object.keys(inputs).length > 0
 
     return (
         <form className="applicant" onSubmit={onSubmit} noValidate>

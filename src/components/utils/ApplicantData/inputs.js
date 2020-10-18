@@ -41,7 +41,7 @@ const applicantInputs = [
         id: 5,
         name: "email",
         placeholder: 'mail@example.com',
-        required: false,
+        required: true,
         type: 'email',
         autocomplete: 'off',        
         label: 'Контактный email'
