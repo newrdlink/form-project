@@ -13,11 +13,11 @@ const Applicant = ({ onSubmitHandler, inputs = [] }) => {
     const [formErrors, setFormErrors] = useState({})
     const [formInputRequire, setFormInputsRequire] = useState(initialOjectRequired)
 
-    console.log(formInputRequire)
-
     const onSubmit = (evt) => {
         evt.preventDefault()
         onSubmitHandler(formData)
+        setFormData({})
+        setFormInputsRequire(initialOjectRequired)
     }
     // рабочий вариант
     const isValidForm = () => {
@@ -32,7 +32,7 @@ const Applicant = ({ onSubmitHandler, inputs = [] }) => {
                 <p className="applicant__title">Заявитель:</p>
                 <p className="applicant__subtitle">основные сведенья</p>
             </div>
-            <form className="applicant__form" onSubmit={onSubmit} >
+            <form name="applicant" className="applicant__form" onSubmit={onSubmit} >
                 {inputs.map(({ type, name, required, id, minlength, maxlenght, placeholder, autocomplete, pattern, label }) => {
                     return <label key={id} className={cn("applicant__container", { "applicant__container_required": !formInputRequire[name] })}>
                         {label}
@@ -60,9 +60,7 @@ const Applicant = ({ onSubmitHandler, inputs = [] }) => {
                 })}
                 <button type="submit" disabled={isValidForm()} className="applicant__button">Запишем данные ...</button>
             </form></section>
-
     )
-
 }
 
 export default Applicant;

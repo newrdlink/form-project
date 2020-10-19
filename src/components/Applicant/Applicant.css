@@ -46,7 +46,7 @@
   padding: 0;
   padding-left: 10px;
   width: 200px;
-  height: 35px;  
+  height: 25px;  
   border-radius: 3px;
   outline: none;
   border: 0;
@@ -77,7 +77,7 @@
   text-align: left;
   color: azure;
   padding-bottom: 5px;
-  margin-bottom: 50px;
+  margin-bottom: 40px;
 }
 
 .applicant__container_required {
@@ -86,7 +86,7 @@
 
 .applicant__error {
   position: absolute;
-  top: 65px;
+  top: 50px;
   left: 0;  
   font-size: 12px;
   color: rgb(63, 219, 180);

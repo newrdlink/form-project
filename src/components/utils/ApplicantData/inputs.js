@@ -35,7 +35,7 @@ const applicantInputs = [
         maxlenght: 20
     },
     {
-        id: 7,
+        id: 4,
         name: "dateBirthday",
         placeholder: '01.02.1990',
         required: true,
@@ -43,10 +43,10 @@ const applicantInputs = [
         minlength: 2,
         autocomplete: 'off',
         label: 'Дата рождения',
-        maxlenght: 20
+        maxlenght: 10
     },
     {
-        id: 4,
+        id: 5,
         name: "phone",
         placeholder: '8 921 333 44 55',
         required: true,
@@ -57,14 +57,14 @@ const applicantInputs = [
         maxlenght: 15
     },
     {
-        id: 5,
+        id: 6,
         name: "email",
         placeholder: 'mail@example.com',
         required: false,
         type: 'email',
         autocomplete: 'off',
         label: 'Контактный email',
-        maxlenght: 25
+        maxlenght: 25,
     },
 
 ]
