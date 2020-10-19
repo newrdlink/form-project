@@ -1,6 +1,15 @@
 const applicantInputs = [
     {
         id: 1,
+        name: "lastName",
+        placeholder: 'Горбунков',
+        required: true,
+        type: 'text',
+        autocomplete: 'off',
+        label: 'Фамилия'
+    },
+    {
+        id: 2,
         name: "firstName",
         placeholder: 'Семен',
         required: true,
@@ -8,15 +17,6 @@ const applicantInputs = [
         minlength: 2,
         autocomplete: 'off',
         label: 'Имя'
-    },
-    {
-        id: 2,
-        name: "lastName",
-        placeholder: 'Горбунков',
-        required: true,
-        type: 'text',
-        autocomplete: 'off',
-        label: 'Фамилия'
     },
     {
         id: 3,
@@ -34,7 +34,7 @@ const applicantInputs = [
         required: false,
         type: 'tel',
         autocomplete: 'off',
-        pattern: "[0-9]{5,10}",
+        pattern: "[0-9]{11}",
         label: 'Контактный номер телефона'
     },
     {
@@ -43,8 +43,18 @@ const applicantInputs = [
         placeholder: 'mail@example.com',
         required: true,
         type: 'email',
-        autocomplete: 'off',        
+        autocomplete: 'off',
         label: 'Контактный email'
+    },
+    {
+        id: 6,
+        name: "snils",
+        placeholder: '',
+        required: true,
+        type: 'tel',
+        autocomplete: 'off',
+        label: 'СНИЛС',
+        pattern: ""
     }
 ]
 
