@@ -1,4 +1,5 @@
 const applicantInputs = [
+
     {
         id: 1,
         name: "lastName",
@@ -32,10 +33,21 @@ const applicantInputs = [
         maxlenght: 20
     },
     {
+        id: 7,
+        name: "dateBirthday",
+        placeholder: '01.02.1990',
+        required: true,
+        type: 'date',
+        minlength: 2,
+        autocomplete: 'off',
+        label: 'Дата рождения',
+        maxlenght: 20
+    },
+    {
         id: 4,
         name: "phone",
         placeholder: '8 921 333 44 55',
-        required: false,
+        required: true,
         type: 'tel',
         autocomplete: 'off',
         pattern: "[8]{1} [0-9]{3} [0-9]{3} [0-9]{2} [0-9]{2}",
@@ -46,23 +58,13 @@ const applicantInputs = [
         id: 5,
         name: "email",
         placeholder: 'mail@example.com',
-        required: true,
+        required: false,
         type: 'email',
         autocomplete: 'off',
         label: 'Контактный email',
         maxlenght: 25
     },
-    {
-        id: 6,
-        name: "snils",
-        placeholder: '',
-        required: true,
-        type: 'tel',
-        autocomplete: 'off',
-        label: 'СНИЛС',
-        pattern: "[8]{1} [0-9]{3} [0-9]{3} [0-9]{2} [0-9]{2}",
-        maxlenght: 11
-    }
+
 ]
 
 export default applicantInputs;

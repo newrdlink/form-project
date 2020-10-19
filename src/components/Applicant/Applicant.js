@@ -4,10 +4,14 @@ import './Applicant.css'
 
 const Applicant = ({ onSubmitHandler, inputs = [] }) => {
     // обьект для начального состояния стейта для определения наличия ошибки
+    // let initialOjectRequired = inputs.reduce((obj, item) => {
+    //     if (item.required === true) {
+    //         obj[item.name] = !item.required
+    //     }
+    //     return obj
+    // }, {})
     let initialOjectRequired = inputs.reduce((obj, item) => {
-        if (item.required === true) {
-            obj[item.name] = !item.required
-        }
+        obj[item.name] = !item.required
         return obj
     }, {})
 
@@ -15,6 +19,7 @@ const Applicant = ({ onSubmitHandler, inputs = [] }) => {
     const [formErrors, setFormErrors] = useState({})
     const [formInputRequire, setFormInputsRequire] = useState(initialOjectRequired)
 
+    console.log(formInputRequire)
 
     const onSubmit = (evt) => {
         evt.preventDefault()
@@ -30,17 +35,12 @@ const Applicant = ({ onSubmitHandler, inputs = [] }) => {
     return (
         <section className="applicant">
             <div className="applicant__header">
-                <h3 className="applicant__title">Заявитель</h3>
-                <label className="applicant__who">
-                    Отец<input name="who" type="radio" />                 
-                </label>
-                <label className="applicant__who">
-                    Мать<input name="who" type="radio" />                    
-                </label>
+                <h3 className="applicant__title">Заявитель:</h3>
+                <p className="applicant__subtitle">основные сведенья</p>
             </div>
             <form className="applicant__form" onSubmit={onSubmit} >
                 {inputs.map(({ type, name, required, id, minlength, maxlenght, placeholder, autocomplete, pattern, label }) => {
-                    return <label key={id} className="applicant__container">
+                    return <label key={id} className={cn("applicant__container", { "applicant__container_required": !formInputRequire[name] })}>
                         {label}
                         <input
                             type={type}
@@ -51,7 +51,10 @@ const Applicant = ({ onSubmitHandler, inputs = [] }) => {
                             maxLength={maxlenght}
                             autoComplete={autocomplete}
                             pattern={pattern}
-                            className={cn("applicant__input", { "applicant__input_required": required && formErrors[name] !== '' })}
+                            className={cn("applicant__input",
+                                // { "applicant__input_required": required && formErrors[name] !== '' },
+                                { "applicant__input_radio": type === "radio" }
+                            )}
                             value={formData[name] || ''}
                             onChange={evt => {
                                 setFormData({ ...formData, [name]: evt.target.value })
