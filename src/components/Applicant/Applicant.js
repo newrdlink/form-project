@@ -20,7 +20,7 @@ const Applicant = ({ onSubmitHandler, inputs = [] }) => {
         evt.preventDefault()
         onSubmitHandler(formData)
     }
-    // рабочий вариант 1
+    // рабочий вариант
     const isValidForm = () => {
         if (
             Object.keys(formInputRequire).some(error => formInputRequire[error] === false)
@@ -28,34 +28,36 @@ const Applicant = ({ onSubmitHandler, inputs = [] }) => {
     }
 
     return (
-        <form className="applicant" onSubmit={onSubmit} >
-            {inputs.map(({ type, name, required, id, minlength, placeholder, autocomplete, pattern, label }) => {
-                return <label key={id} className="applicant__container">
-                    {label}
-                    <input
-                        type={type}
-                        required={required}
-                        name={name}
-                        placeholder={placeholder}
-                        minLength={minlength}
-                        autoComplete={autocomplete}
-                        pattern={pattern}
-                        className={cn("applicant__input", { "applicant__input_required": required && formErrors[name] !== '' })}
-                        value={formData[name] || ''}
-                        onChange={evt => {
-                            setFormData({ ...formData, [name]: evt.target.value })
-                            const errorMessage = evt.target.validationMessage
-                            setFormErrors({ ...formErrors, [name]: errorMessage || '' })
-                            const isInputRequired = evt.target.validity.valid
-                            setFormInputsRequire({ ...formInputRequire, [name]: isInputRequired })
-                        }}
-                    />
-                    <span className="applicant__error">{formErrors[name]}</span>
-                </label>
-            })}
-            <button type="submit" disabled={isValidForm()} className="applicant__button">submit</button>
-            <button disabled={isValidForm()} onClick={() => window.print()} type="button" className="applicant__button">print</button>
-        </form>
+        <section className="applicant">
+            <h3 className="applicant__title">Заявитель</h3>
+            <form className="applicant__form" onSubmit={onSubmit} >
+                {inputs.map(({ type, name, required, id, minlength, placeholder, autocomplete, pattern, label }) => {
+                    return <label key={id} className="applicant__container">
+                        {label}
+                        <input
+                            type={type}
+                            required={required}
+                            name={name}
+                            placeholder={placeholder}
+                            minLength={minlength}
+                            autoComplete={autocomplete}
+                            pattern={pattern}
+                            className={cn("applicant__input", { "applicant__input_required": required && formErrors[name] !== '' })}
+                            value={formData[name] || ''}
+                            onChange={evt => {
+                                setFormData({ ...formData, [name]: evt.target.value })
+                                const errorMessage = evt.target.validationMessage
+                                setFormErrors({ ...formErrors, [name]: errorMessage || '' })
+                                const isInputRequired = evt.target.validity.valid
+                                setFormInputsRequire({ ...formInputRequire, [name]: isInputRequired })
+                            }}
+                        />
+                        <span className="applicant__error">{formErrors[name]}</span>
+                    </label>
+                })}
+                <button type="submit" disabled={isValidForm()} className="applicant__button">Запишем данные ...</button>
+            </form></section>
+
     )
 
 }
