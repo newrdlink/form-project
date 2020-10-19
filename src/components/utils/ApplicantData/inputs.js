@@ -10,6 +10,7 @@ const applicantInputs = [
         label: 'Фамилия',
         maxlenght: 20,
         minlength: 2,
+        pattern: "[А-Я]{1}[А-Яа-яЁё]{1,}" //только русская буква
     },
     {
         id: 2,
@@ -20,7 +21,8 @@ const applicantInputs = [
         minlength: 2,
         autocomplete: 'off',
         label: 'Имя',
-        maxlenght: 20
+        maxlenght: 20,
+        pattern: "[А-Я]{1}[А-Яа-яЁё]{1,}"
     },
     {
         id: 3,

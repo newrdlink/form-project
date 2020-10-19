@@ -3,13 +3,7 @@ import cn from 'classnames'
 import './Applicant.css'
 
 const Applicant = ({ onSubmitHandler, inputs = [] }) => {
-    // обьект для начального состояния стейта для определения наличия ошибки
-    // let initialOjectRequired = inputs.reduce((obj, item) => {
-    //     if (item.required === true) {
-    //         obj[item.name] = !item.required
-    //     }
-    //     return obj
-    // }, {})
+
     let initialOjectRequired = inputs.reduce((obj, item) => {
         obj[item.name] = !item.required
         return obj
@@ -35,7 +29,7 @@ const Applicant = ({ onSubmitHandler, inputs = [] }) => {
     return (
         <section className="applicant">
             <div className="applicant__header">
-                <h3 className="applicant__title">Заявитель:</h3>
+                <p className="applicant__title">Заявитель:</p>
                 <p className="applicant__subtitle">основные сведенья</p>
             </div>
             <form className="applicant__form" onSubmit={onSubmit} >
@@ -51,10 +45,7 @@ const Applicant = ({ onSubmitHandler, inputs = [] }) => {
                             maxLength={maxlenght}
                             autoComplete={autocomplete}
                             pattern={pattern}
-                            className={cn("applicant__input",
-                                // { "applicant__input_required": required && formErrors[name] !== '' },
-                                { "applicant__input_radio": type === "radio" }
-                            )}
+                            className={cn("applicant__input")}
                             value={formData[name] || ''}
                             onChange={evt => {
                                 setFormData({ ...formData, [name]: evt.target.value })
