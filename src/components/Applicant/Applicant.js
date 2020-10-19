@@ -29,9 +29,17 @@ const Applicant = ({ onSubmitHandler, inputs = [] }) => {
 
     return (
         <section className="applicant">
-            <h3 className="applicant__title">Заявитель</h3>
+            <div className="applicant__header">
+                <h3 className="applicant__title">Заявитель</h3>
+                <label className="applicant__who">
+                    Отец<input name="who" type="radio" />                 
+                </label>
+                <label className="applicant__who">
+                    Мать<input name="who" type="radio" />                    
+                </label>
+            </div>
             <form className="applicant__form" onSubmit={onSubmit} >
-                {inputs.map(({ type, name, required, id, minlength, placeholder, autocomplete, pattern, label }) => {
+                {inputs.map(({ type, name, required, id, minlength, maxlenght, placeholder, autocomplete, pattern, label }) => {
                     return <label key={id} className="applicant__container">
                         {label}
                         <input
@@ -40,6 +48,7 @@ const Applicant = ({ onSubmitHandler, inputs = [] }) => {
                             name={name}
                             placeholder={placeholder}
                             minLength={minlength}
+                            maxLength={maxlenght}
                             autoComplete={autocomplete}
                             pattern={pattern}
                             className={cn("applicant__input", { "applicant__input_required": required && formErrors[name] !== '' })}

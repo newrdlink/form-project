@@ -2,18 +2,31 @@
   max-width: 500px;
   background-color: rgb(5, 95, 91);
   padding: 5px;
-  padding-top: 15px;
+  padding-top: 25px;
   border-radius: 10px;
 }
+.applicant__header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom: 2px solid rgb(53, 38, 80);
+  margin-bottom: 15px;
+}
 
+.applicant__image {
+  height: 30px;
+  width: 20px;
+  
+}
 .applicant__title {
   color: azure;
   font-family: 'Roboto Condensed';
   text-align: center;
   margin: 0;
-  padding-bottom: 15px;
-  border-bottom: 2px solid rgb(53, 38, 80);
+  margin-bottom: 20px;
+  margin-right: 100px;
 }
+
 .applicant__form { 
   display: flex;
   flex-wrap: wrap;
@@ -24,7 +37,11 @@
   background-color: rgb(5, 95, 91);  
   border-radius: 5px;
 }
-
+.applicant__who {
+  color: azure;
+  font-family: 'Roboto Condensed';
+  text-align: center;
+}
 .applicant__input {
   margin: 0;
   margin-right: 10px;
@@ -50,7 +67,7 @@
 }
 
 .applicant__button {
-  margin-top: 30px;
+  margin-top: 10px;
   height: 35px;
   width: 100%;
 }
@@ -75,4 +92,5 @@
   color: rgb(63, 219, 180);
   padding: 0;
   width: 200px;
+  text-overflow: clip;
 }

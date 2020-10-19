@@ -6,7 +6,9 @@ const applicantInputs = [
         required: true,
         type: 'text',
         autocomplete: 'off',
-        label: 'Фамилия'
+        label: 'Фамилия',
+        maxlenght: 20,
+        minlength: 2,
     },
     {
         id: 2,
@@ -16,7 +18,8 @@ const applicantInputs = [
         type: 'text',
         minlength: 2,
         autocomplete: 'off',
-        label: 'Имя'
+        label: 'Имя',
+        maxlenght: 20
     },
     {
         id: 3,
@@ -25,7 +28,8 @@ const applicantInputs = [
         required: false,
         type: 'text',
         autocomplete: 'off',
-        label: 'Отчество'
+        label: 'Отчество',
+        maxlenght: 20
     },
     {
         id: 4,
@@ -34,8 +38,9 @@ const applicantInputs = [
         required: false,
         type: 'tel',
         autocomplete: 'off',
-        pattern: "[0-9]{11}",
-        label: 'Контактный номер телефона'
+        pattern: "[8]{1} [0-9]{3} [0-9]{3} [0-9]{2} [0-9]{2}",
+        label: 'Контактный номер телефона',
+        maxlenght: 15
     },
     {
         id: 5,
@@ -44,7 +49,8 @@ const applicantInputs = [
         required: true,
         type: 'email',
         autocomplete: 'off',
-        label: 'Контактный email'
+        label: 'Контактный email',
+        maxlenght: 25
     },
     {
         id: 6,
@@ -54,7 +60,8 @@ const applicantInputs = [
         type: 'tel',
         autocomplete: 'off',
         label: 'СНИЛС',
-        pattern: "[8]{1} [0-9]{3} [0-9]{3} [0-9]{2} [0-9]{2}"
+        pattern: "[8]{1} [0-9]{3} [0-9]{3} [0-9]{2} [0-9]{2}",
+        maxlenght: 11
     }
 ]
 
