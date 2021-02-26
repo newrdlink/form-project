@@ -4,6 +4,7 @@
   padding: 10px 10px; 
   border-radius: 10px;
 }
+
 .applicant__header {
   display: flex;
   justify-content: space-around;
@@ -12,11 +13,6 @@
   margin-bottom: 15px;
 }
 
-.applicant__image {
-  height: 30px;
-  width: 20px;
-  
-}
 .applicant__title {
   color: azure;
   font-family: 'Roboto Condensed';
@@ -29,6 +25,7 @@
   color: azure;
   font-family: 'Roboto Condensed';
   font-style: italic;
+  font-size: 14px;
 }
 
 .applicant__form { 
@@ -46,7 +43,7 @@
   padding: 0;
   padding-left: 10px;
   width: 200px;
-  height: 25px;  
+  height: 30px;  
   border-radius: 3px;
   outline: none;
   border: 0;
@@ -86,7 +83,7 @@
 
 .applicant__error {
   position: absolute;
-  top: 50px;
+  top: 55px;
   left: 0;  
   font-size: 12px;
   color: rgb(63, 219, 180);
