@@ -9,7 +9,9 @@ function App() {
   return (
     <div className="App">
       <h1>Hello</h1>
-      <Applicant inputs={applicantInputs} onSubmitHandler={(formData) => { console.log('from app ', formData) }} />
+      <Applicant
+        inputs={applicantInputs}
+        onSubmitHandler={(formData) => { console.log('from app ', formData) }} />
     </div>
   );
 }
